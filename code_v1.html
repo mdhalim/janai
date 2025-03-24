@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Heir Certificate Form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .disclaimer {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 0.9rem;
+            color: #856404;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        h2 {
+            color: #34495e;
+            font-weight: 500;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .heir {
+            border: 2px solid #e2e8f0;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        .heir:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .remove-heir {
+            background-color: #dc3545;
+            margin-top: 10px;
+        }
+
+        .remove-heir:hover {
+            background-color: #c82333;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        #addHeir {
+            background-color: #28a745;
+        }
+
+        #previewButton {
+            background-color: #007bff;
+        }
+
+        @media print {
+            .form-section {
+                display: none;
+            }
+            @page {
+                margin: 0.5in;
+            }
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="disclaimer">
+            <strong>Disclaimer:</strong> This is not an official government website. This tool is provided as-is to help users generate a PDF draft of the Legal Heir Certificate. The generated PDF document must be taken to your local Panchayat office for official review, validation, and stamping to be considered legally valid.
+        </div>
+        
+        <div class="form-section">
+            <h1>Legal Heir Certificate Form</h1>
+            <form id="legalHeirForm">
+                <div class="form-group">
+                    <label for="deceasedName">Name of Deceased Person</label>
+                    <input type="text" id="deceasedName" name="deceasedName" required placeholder="Enter full name">
+                </div>
+                <div class="form-group">
+                    <label for="relation">Relation Type</label>
+                    <select id="relation" name="relation" required>
+                        <option value="">Select relation</option>
+                        <option value="wife">Wife of</option>
+                        <option value="daughter">Daughter of</option>
+                        <option value="husband">Husband of</option>
+                        <option value="son">Son of</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="guardianName">Name of Spouse/Father</label>
+                    <input type="text" id="guardianName" name="guardianName" required placeholder="Enter full name">
+                </div>
+                <div class="form-group">
+                    <label for="village">Village</label>
+                    <input type="text" id="village" name="village" required placeholder="Enter village name">
+                </div>
+                <div class="form-group">
+                    <label for="postOffice">Post Office</label>
+                    <input type="text" id="postOffice" name="postOffice" required placeholder="Enter post office">
+                </div>
+                <div class="form-group">
+                    <label for="policeStation">Police Station</label>
+                    <input type="text" id="policeStation" name="policeStation" required placeholder="Enter police station">
+                </div>
+                <div class="form-group">
+                    <label for="district">District</label>
+                    <input type="text" id="district" name="district" required placeholder="Enter district">
+                </div>
+                <div class="form-group">
+                    <label for="dateOfDeath">Date of Death</label>
+                    <input type="date" id="dateOfDeath" name="dateOfDeath" required>
+                </div>
+                <div class="form-group">
+                    <label for="deathCertType">Type of Death Certificate</label>
+                    <select id="deathCertType" name="deathCertType" required>
+                        <option value="">Select type</option>
+                        <option value="certificate">Death Certificate</option>
+                        <option value="affidavit">Affidavit</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ageAtDeath">Age at Death</label>
+                    <input type="number" id="ageAtDeath" name="ageAtDeath" required placeholder="Enter age">
+                </div>
+
+                <h2>Legal Heirs Information</h2>
+                <div id="heirsContainer"></div>
+                <div class="button-group">
+                    <button type="button" id="addHeir">
+                        <i class="fas fa-plus"></i> Add Another Heir
+                    </button>
+                    <button type="button" id="previewButton">
+                        <i class="fas fa-file-pdf"></i> Generate PDF
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <script>
+        let heirCount = 0;
+
+        function addHeirField() {
+            heirCount++;
+            const heirDiv = document.createElement('div');
+            heirDiv.className = 'heir';
+            heirDiv.innerHTML = `
+                <h3>Heir #${heirCount}</h3>
+                <div class="form-group">
+                    <label for="heirName${heirCount}">Name of Heir</label>
+                    <input type="text" id="heirName${heirCount}" name="heirName${heirCount}" required>
+                </div>
+                <div class="form-group">
+                    <label for="heirRelationType${heirCount}">Relation Type</label>
+                    <select id="heirRelationType${heirCount}" name="heirRelationType${heirCount}" required>
+                        <option value="">Select relation type</option>
+                        <option value="W/O">Wife of</option>
+                        <option value="D/O">Daughter of</option>
+                        <option value="S/O">Son of</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="heirGuardianName${heirCount}">Father's/Husband's Name</label>
+                    <input type="text" id="heirGuardianName${heirCount}" name="heirGuardianName${heirCount}" required>
+                </div>
+                <div class="form-group">
+                    <label for="heirRelationship${heirCount}">Relationship with Deceased</label>
+                    <input type="text" id="heirRelationship${heirCount}" name="heirRelationship${heirCount}" required>
+                </div>
+                <div class="form-group">
+                    <label for="heirAddress${heirCount}">Address</label>
+                    <input type="text" id="heirAddress${heirCount}" name="heirAddress${heirCount}" required>
+                </div>
+                ${heirCount > 1 ? '<button type="button" class="remove-heir" onclick="removeHeir(this)">Remove</button>' : ''}
+            `;
+            document.getElementById('heirsContainer').appendChild(heirDiv);
+        }
+
+        function removeHeir(button) {
+            button.parentElement.remove();
+            updateHeirNumbers();
+        }
+
+        function updateHeirNumbers() {
+            const heirs = document.querySelectorAll('.heir');
+            heirs.forEach((heir, index) => {
+                heir.querySelector('h3').textContent = `Heir #${index + 1}`;
+            });
+            heirCount = heirs.length;
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-GB', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            });
+        }
+
+        function getRelationPrefix(relation) {
+        switch(relation) {
+            case 'wife':
+                return {
+                    prefix: 'W/O',
+                    pronoun: 'she',
+                    possessive: 'her'
+                };
+            case 'daughter':
+                return {
+                    prefix: 'D/O',
+                    pronoun: 'she',
+                    possessive: 'her'
+                };
+            case 'husband':
+                return {
+                    prefix: 'S/O',
+                    pronoun: 'he',
+                    possessive: 'his'
+                };
+            case 'son':
+                return {
+                    prefix: 'S/O',
+                    pronoun: 'he',
+                    possessive: 'his'
+                };
+            default:
+                return {
+                    prefix: 'S/O',
+                    pronoun: 'they',
+                    possessive: 'their'
+                };
+        }
+    }
+
+        function generatePDF(formData) {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Add a border to the page
+            doc.rect(5, 5, 200, 287);
+
+            // Set fonts
+            doc.setFont("times", "bold");
+            
+            // Header
+            doc.setFontSize(22);
+            doc.text('JANAI GRAM PANCHAYAT', 105, 20, { align: 'center' });
+            
+            doc.setFontSize(14);
+            doc.text('(UNDER CHANDITALA-II PANCHAYAT SAMITY)', 105, 28, { align: 'center' });
+            
+            doc.setFont("times", "normal");
+            doc.setFontSize(12);
+            doc.text('P.O. & VILL- JANAI, DIST. - HOOGHLY', 105, 34, { align: 'center' });
+            doc.text('Pin - 712704', 105, 40, { align: 'center' });
+            doc.setFontSize(11);
+            doc.text('E.Mail : janaipanchayat07@rediffmail.com', 105, 46, { align: 'center' });
+            doc.text('Phone No.: (03212)260-208', 105, 52, { align: 'center' });
+            
+            // Decorative line
+            doc.setLineWidth(0.5);
+            doc.line(20, 58, 190, 58);
+            
+            // Reference and Date
+            doc.setFont("times", "italic");
+            doc.text('Ref: No..', 20, 68);
+            doc.text('Date:', 170, 68);
+            
+            // Title
+            doc.setFont("times", "bold");
+            doc.setFontSize(16);
+            doc.text('To Whom It May Concern', 105, 83, { align: 'center' });
+            
+            // Get gender-specific pronouns
+            const { prefix, pronoun, possessive } = getRelationPrefix(formData.relation);
+            
+            // Main content with proper spacing
+            doc.setFont("times", "normal");
+            doc.setFontSize(12);
+            
+            let mainText = `This is to certify that ${formData.deceasedName} ${prefix} ${formData.guardianName} of Vill ${formData.village}, P.O. ${formData.postOffice}, P.S. ${formData.policeStation}, Dist- ${formData.district} was personally known to me and I am also conversant with ${possessive} family.`;
+            
+            const lines = doc.splitTextToSize(mainText, 170);
+            let y = 98;
+            lines.forEach(line => {
+                doc.text(line, 20, y);
+                y += 7;
+            });
+            
+            y += 5;
+            let deathText = `${formData.deceasedName} died intestate on ${formatDate(formData.dateOfDeath)} and ${possessive} age as per ${formData.deathCertType === 'affidavit' ? 'affidavit was' : 'death certificate was'} ${formData.ageAtDeath} years.`;
+            const deathLines = doc.splitTextToSize(deathText, 170);
+            deathLines.forEach(line => {
+                doc.text(line, 20, y);
+                y += 7;
+            });
+            
+            y += 5;
+            doc.text(`${pronoun.charAt(0).toUpperCase() + pronoun.slice(1)} left behind the following legal heirs at the time of ${possessive} death:`, 20, y);
+            
+            // Table of heirs with tighter spacing
+            y += 5;
+            const headers = [['SL. No', 'Name of the heirs', "Father's/\nHusband's\nName", 'Relationship', 'Address']];
+            const data = formData.heirs.map((heir, index) => [
+                index + 1,
+                heir.name,
+                `${heir.relationType} ${heir.guardianName}`,
+                heir.relationship,
+                heir.address
+            ]);
+            
+            let finalY;
+            doc.autoTable({
+                head: headers,
+                body: data,
+                startY: y,
+                margin: { left: 30 },  // Table moved to the right
+                theme: 'plain',
+                styles: { 
+                    fontSize: 10, 
+                    cellPadding: 2,
+                    overflow: 'linebreak',
+                    halign: 'left',
+                    valign: 'middle'
+                },
+                headStyles: { fontStyle: 'bold', fillColor: false },
+                columnStyles: { 
+                    0: { cellWidth: 15 },
+                    1: { cellWidth: 40 },
+                    2: { cellWidth: 30 },
+                    3: { cellWidth: 30 },
+                    4: { cellWidth: 'auto' }
+                },
+                didDrawPage: function(data) {
+                    finalY = data.cursor.y;
+                }
+            });
+            
+            // Add statement about no other legal heirs
+            finalY += 15;  // Add some spacing after table
+            doc.setFont("times", "normal");
+            const noOtherHeirsText = 'There is no others legal heirs of the above deceased person except the above heads.';
+            doc.text(noOtherHeirsText, 20, finalY);
+
+            // Signature block positioned relative to table end
+            finalY += 25;  // Add more spacing before signature
+            doc.setFont("times", "bold");
+            doc.text('Prodhan', 170, finalY);
+            doc.setFont("times", "normal");
+            doc.text('Janai Gram Panchayat', 150, finalY + 5);
+
+            doc.save('Legal_Heir_Certificate.pdf');
+        }
+
+        // Add event listener for the preview button
+        document.getElementById('previewButton').addEventListener('click', function() {
+            const formData = {
+                deathCertType: document.getElementById('deathCertType').value,
+                deceasedName: document.getElementById('deceasedName').value,
+                relation: document.getElementById('relation').value,
+                guardianName: document.getElementById('guardianName').value,
+                village: document.getElementById('village').value,
+                postOffice: document.getElementById('postOffice').value,
+                policeStation: document.getElementById('policeStation').value,
+                district: document.getElementById('district').value,
+                dateOfDeath: document.getElementById('dateOfDeath').value,
+                ageAtDeath: document.getElementById('ageAtDeath').value,
+                heirs: Array.from(document.querySelectorAll('.heir')).map((heir) => ({
+                    name: heir.querySelector('input[name^="heirName"]').value,
+                    relationType: heir.querySelector('select[name^="heirRelationType"]').value,
+                    guardianName: heir.querySelector('input[name^="heirGuardianName"]').value,
+                    relationship: heir.querySelector('input[name^="heirRelationship"]').value,
+                    address: heir.querySelector('input[name^="heirAddress"]').value
+                }))
+            };
+            generatePDF(formData);
+        });
+
+        // Initialize with one heir field
+        addHeirField();
+
+        // Add event listener for the "Add Another Heir" button
+        document.getElementById('addHeir').addEventListener('click', addHeirField);
+    </script>
+</body>
+</html>
